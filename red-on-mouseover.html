@@ -1,0 +1,45 @@
+
+<!--Problem #2
+
+Write a JavaScript program to highlight the bold words of the following paragraph
+by changing the text color to red, on mouse over.
+
+We have just started this section for the users (beginner to intermediate) who want
+to work with various JavaScript problems and write scripts online to test their
+JavaScript skill.
+
+Hint: wordItems = document.getElementsByTagName('strong');
+The paragraph uses <strong></strong> tags for the bold words.
+Change <strong> default behavior.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Red On Mouseover</title>
+</head>
+<body>
+
+    <!--Create paragraph element with <strong> tags to id-->
+    <p><strong>We</strong> have just started <strong>this</strong> section for the users (<strong>beginner</strong> to intermediate)
+        who want to work with <strong>various</strong> JavaScript <strong>problems</strong> and write scripts online
+        to <strong>test</strong> their JavaScript <strong>skill</strong>.</p>
+
+    <script>
+
+        // declare function to change target object's color value
+        function changeColor(event) {
+            event.target.style.color = 'red'  // change color to red on mouseover
+        }
+
+        // declare variable to store <strong> tags as a single object
+        var wordItems = document.getElementsByTagName('strong');
+
+        // loop through <strong> tags and listen for mouseover event
+        for (var i = 0; i < wordItems.length; i++) {
+            wordItems[i].addEventListener('mouseover', changeColor);
+        }
+    </script>
+
+</body>
+</html>
